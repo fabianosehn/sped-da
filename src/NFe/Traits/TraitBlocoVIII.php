@@ -21,6 +21,9 @@ trait TraitBlocoVIII
         $maxW = $this->wPrint;
         $w = ($maxW*1)+4;
         $barcode = new Barcode();
+        if (empty($this->qrCode)) {
+            $this->qrCode = "https://vimbo.com.br/";
+        }
         $bobj = $barcode->getBarcodeObj(
             'QRCODE,M',
             $this->qrCode,
